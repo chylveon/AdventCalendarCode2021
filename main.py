@@ -29,13 +29,26 @@ i = 0
 j = 1
 k = 2
 sum_list = []
-while k < (list_len - 1):
-    while j < (list_len - 2):
-        while i < (list_len - 3):
-            sum_list.append(input_list[i] + input_list[j] + input_list[k])
-
+while k < (list_len):
+    while j < (list_len - 1):
+        while i < (list_len - 2):
+            sum_of_AAA = input_list[i] + input_list[j] + input_list[k]
+            sum_list.append(sum_of_AAA)
             i += 1
-        j += 1
-    k += 1
+            j += 1
+            k += 1
 
-print(sum_list)
+print(sum_list[:7])
+
+# repeat comparison from before with sum_list instead of input_list:
+num_increasing = 0
+current_num = 0
+previous_num = 0
+for num in sum_list:
+    current_num = num
+    if previous_num != 0 and previous_num != current_num:
+        if previous_num < current_num:
+            num_increasing += 1
+    previous_num = current_num
+
+print(num_increasing)
