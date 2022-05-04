@@ -92,4 +92,4 @@ while i != len(input_list):
     i += 1
 
 depth_by_hor_pos_and_aim = horizontal_position * depth
-print(depth_by_hor_pos)
+print(depth_by_hor_pos_and_aim)
