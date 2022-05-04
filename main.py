@@ -51,4 +51,4 @@ for num in sum_list:
             num_increasing += 1
     previous_num = current_num
 
-print(num_increasing)
+# print(num_increasing)
