@@ -64,16 +64,27 @@ with open('input02.txt', 'r') as input_1:
 i = 0
 horizontal_position = 0
 depth = 0
+#print(input_list[:7])
+
+for each_list in input_list[:]:
+    for index, elem in enumerate(each_list[:]):
+        if index == 1:
+            each_list[index] = int(elem)
+
+#print(input_list[:7])
+
+i = 0
 while i != len(input_list):
     # if direction == forward add to horizontal position
     if input_list[i][0] == 'forward':
-        horizontal_position += int(input_list[i][1])
+        horizontal_position += input_list[i][1]
     # if direction == up subtract from depth
     if input_list[i][0] == 'up':
-        depth -= int(input_list[i][1])
+        depth -= input_list[i][1]
     # if direction == down add to depth
     if input_list[i][0] == 'down':
-        depth += int(input_list[i][1])
+        depth += input_list[i][1]
+    i += 1
 
 depth_by_hor_pos = horizontal_position * depth
 print(depth_by_hor_pos)
