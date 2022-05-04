@@ -61,9 +61,6 @@ with open('input02.txt', 'r') as input_1:
 # print(input_list[:7])
 
 # compare outputs based on first [][0]
-i = 0
-horizontal_position = 0
-depth = 0
 #print(input_list[:7])
 
 for each_list in input_list[:]:
@@ -72,19 +69,27 @@ for each_list in input_list[:]:
             each_list[index] = int(elem)
 
 #print(input_list[:7])
-
+#day two uses same input but different direction
+# with addition of aim
+horizontal_position = 0
+depth = 0
+aim = 0
 i = 0
 while i != len(input_list):
     # if direction == forward add to horizontal position
+    # increases depth by aim * input_list[i][1]
     if input_list[i][0] == 'forward':
         horizontal_position += input_list[i][1]
-    # if direction == up subtract from depth
+        depth += aim * input_list[i][1]
+
+    # if direction == up subtract from aim
     if input_list[i][0] == 'up':
-        depth -= input_list[i][1]
-    # if direction == down add to depth
+        aim -= input_list[i][1]
+
+    # if direction == down add to aim
     if input_list[i][0] == 'down':
-        depth += input_list[i][1]
+        aim += input_list[i][1]
     i += 1
 
-depth_by_hor_pos = horizontal_position * depth
+depth_by_hor_pos_and_aim = horizontal_position * depth
 print(depth_by_hor_pos)
